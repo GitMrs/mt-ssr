@@ -7,28 +7,26 @@
       <el-main>
         <nuxt />
       </el-main>
-      <el-footer><m-footer /></el-footer>
+      <el-footer>
+        <m-footer />
+      </el-footer>
     </el-container>
-    
   </div>
 </template>
 <script>
-import mHeader from '@/components/public/header';
-import mFooter from '@/components/public/footer'
+import mHeader from "@/components/public/header";
+import mFooter from "@/components/public/footer";
 export default {
-  name:'Index',
-  data(){
-    return{
-
-    }
+  name: "Index",
+  data() {
+    return {};
   },
-  components:{
+  components: {
     mHeader,
     mFooter
   }
-}
+};
 </script>
 
 <style lang='scss'>
-
 </style>

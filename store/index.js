@@ -5,14 +5,17 @@ import geo from './modules/geo';
 
 Vue.use(Vuex);
 const Store = () => new Vuex.Store({
-  modules:{
+  modules: {
     geo
   },
-  actions:{
-    async nuxtServerInit({commit},{req,app}){
-      const {status,data} = await app.$axios.get('/geo/getPosition');
-      commit('setPosition',status === 200 ? {city:data.city}: {province:'1',city:'2'})
-     }
+  actions: {
+    async nuxtServerInit({ commit }, { req, app }) {
+      {
+        const { status, data } = await app.$axios.get('/geo/getPosition');
+        console.log(data.city)
+        commit('geo/setPosition', status === 200 ? { city: data.city } : { province: '', city: '' })
+      }
+    }
   }
 })
 export default Store;
